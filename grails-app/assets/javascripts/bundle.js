@@ -22295,6 +22295,7 @@ function getBase64(file) {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function () {
+        alert(reader.result);
         fetch('http://localhost:8080/document/upload?imageName=' + file.name, {
             method: 'POST',
             headers: {

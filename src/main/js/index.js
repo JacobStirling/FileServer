@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Dropzone from 'react-dropzone';
 
-function getBase64(file) {
+function encodeAndUpload(file) {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function () {
@@ -29,7 +29,7 @@ function getBase64(file) {
 var DropzoneDemo = React.createClass({
     onDrop: function (files) {
         console.log('Received files: ', files);
-        getBase64(files[0])
+        encodeAndUpload(files[0])
     },
 
     render: function () {
